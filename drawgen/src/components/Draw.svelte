@@ -1,13 +1,14 @@
 <script>
-    let { drawTypeTitle, organization, num_flyers, level } = $props();
-    let rounds = 8;
+    import Round from "./Round.svelte";
+    let { rounds } = $props();
+
 </script>
 
 <div>
-    {drawTypeTitle}
-    {organization}
-    {num_flyers}
-    {level}
+    {#each rounds as round}
+        round: {round}
+        <Round formations = {round}/>
+    {/each}
 </div>
 
 <!--

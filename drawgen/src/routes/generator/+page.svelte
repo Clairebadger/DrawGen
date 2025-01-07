@@ -3,8 +3,9 @@
     import Draw from "../../components/Draw.svelte";
     import { categories } from "../../constants/FormCategories.ts";
     import {checkALlValuesEntered, getDetailsFromOrgDiscipline} from "../../helpers/formHelpers.ts";
+    import {createVfsDraw} from "../../helpers/drawHelpers.ts"
 
-    let submitted = $state(false);
+    let rounds = $state([])
     let readyToSubmit = $state(false);
 
     let drawType = $state({title: "", organizations: []});
@@ -13,7 +14,14 @@
     let level = $state("");
 
     let handleSubmit = () => {
-        submitted = !submitted;
+        const draw = {
+            type: drawType,
+            organization: organization,
+            numFlyers: num_flyers,
+            level: level
+        };
+
+        rounds = createVfsDraw(draw)
     }
 </script>
 
@@ -65,11 +73,7 @@
     </form>
 
     <div class="span-row" >
-        {#if submitted === true}
-            <Draw drawType = {drawType.title} organization = {organization} num_flyers = {num_flyers} level = {level} />
-        {:else}
-            <div>{readyToSubmit}</div>
-        {/if}
+        <Draw rounds = {rounds} />
     </div>
 </div>
 

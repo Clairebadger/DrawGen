@@ -28,7 +28,7 @@ export const organizations = {
     cf: ["FAI-ISC, USPA"],
 }
 
-type FormationDetails = {
+export type FormationDetails = {
     formation_type: string,
     organization: string,
     num_flyers: number[],
