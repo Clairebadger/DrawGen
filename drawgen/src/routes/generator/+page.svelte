@@ -3,7 +3,7 @@
     import Draw from "../../components/Draw.svelte";
     import { categories } from "../../constants/FormCategories.ts";
     import {checkALlValuesEntered, getDetailsFromOrgDiscipline} from "../../helpers/formHelpers.ts";
-    import {createVfsDraw} from "../../helpers/drawHelpers.ts"
+    import {getDraw} from "../../helpers/drawHelpers.ts"
 
     let rounds = $state([])
     let readyToSubmit = $state(false);
@@ -15,13 +15,13 @@
 
     let handleSubmit = () => {
         const draw = {
-            type: drawType,
+            type: drawType.title,
             organization: organization,
             numFlyers: num_flyers,
             level: level
         };
 
-        rounds = createVfsDraw(draw)
+        rounds = getDraw(draw)
     }
 </script>
 
@@ -72,7 +72,7 @@
         <button disabled={!readyToSubmit} type="submit"> Submit </button>
     </form>
 
-    <div class="span-row" >
+    <div class="span-row round-container"  >
         <Draw rounds = {rounds} />
     </div>
 </div>
@@ -85,7 +85,7 @@
         grid-template-columns: 1fr 1fr;
         grid-auto-rows: minmax(100px, auto);
         gap: 10px;
-        padding: 1em;
+        padding: .5em;
         color: #00AFB9;
         font: 1.2em "Chillax", sans-serif;
     }
@@ -130,6 +130,10 @@
         font-size: 1em;
         width: 50%;
         height: 50%;
+    }
+
+    .round-container {
+        padding-top: 5%;
     }
 </style>
 

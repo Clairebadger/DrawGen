@@ -1,5 +1,14 @@
+export const organizations = {
+    fs: ["FAI-ISC", "USPA", "USPA Collegiate", "AXIS", "USIS Indoor", "FAI-ISC Indoor", "CISM", "NSL", "SVNH Indoor"],
+    vfs: ["FAI-ISC", "USPA", "USPA Collegiate", "USIS Indoor", "FAI-ISC Indoor"],
+    mfs: ["USPA", "AXIS"],
+    hfs: ["AXIS"],
+    dyn: ["FAI-ISC Indoor"],
+    xf: ["AXIS"],
+    cf: ["FAI-ISC, USPA"],
+}
 
-export const categories = [
+export const categories = [ // TODO: figure out how to refactor organizations into something that makes more sense
     {title: "Formation (FS)", organizations: ["FAI-ISC", "USPA", "USPA Collegiate", "AXIS", "USIS Indoor", "FAI-ISC Indoor", "CISM", "NSL", "SVNH Indoor"]},
     {title: "Vertical Formation (VFS)", organizations: ["FAI-ISC", "USPA", "USPA Collegiate", "USIS Indoor", "FAI-ISC Indoor"]},
     {title: "Mixed Formation (MFS)", organizations: ["USPA", "AXIS"]},
@@ -16,16 +25,6 @@ export const disciplines = {
     dyn: "Dynamic (DYN)",
     xf: "Cross Formation (XF)",
     cf: "Canopy Formation (CF)"
-}
-
-export const organizations = {
-    fs: ["FAI-ISC", "USPA", "USPA Collegiate", "AXIS", "USIS Indoor", "FAI-ISC Indoor", "CISM", "NSL", "SVNH Indoor"],
-    vfs: ["FAI-ISC", "USPA", "USPA Collegiate", "USIS Indoor", "FAI-ISC Indoor"],
-    mfs: ["USPA", "AXIS"],
-    hfs: ["AXIS"],
-    dyn: ["FAI-ISC Indoor"],
-    xf: ["AXIS"],
-    cf: ["FAI-ISC, USPA"],
 }
 
 export type FormationDetails = {
