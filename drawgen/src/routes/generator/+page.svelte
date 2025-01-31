@@ -1,5 +1,4 @@
 <script>
-    import Header from "../../layout/Header.svelte";
     import Draw from "../../components/Draw.svelte";
     import { categories } from "../../constants/FormCategories.ts";
     import {checkALlValuesEntered, getDetailsFromOrgDiscipline} from "../../helpers/formHelpers.ts";
@@ -25,7 +24,6 @@
     }
 </script>
 
-<Header />
 
 <div class="grid-container">
     <form onsubmit={() => handleSubmit()} class="grid-container">

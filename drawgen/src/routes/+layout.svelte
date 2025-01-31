@@ -7,7 +7,22 @@
 <AppShell>
     <svelte:fragment slot="header">
         <!-- App Bar -->
-
+        <AppBar padding="p-8">
+            <svelte:fragment slot="lead">
+                <strong class="text-xl uppercase">DrawGen</strong>
+            </svelte:fragment>
+            <svelte:fragment slot="trail">
+                <a class="btn btn-sm variant-ghost-surface" href="/generator">
+                    New Draw
+                </a>
+                <a class="btn btn-sm variant-ghost-surface" href="/library">
+                    Library
+                </a>
+                <a class="btn btn-sm variant-ghost-surface" href="/generator">
+                    About
+                </a>
+            </svelte:fragment>
+        </AppBar>
     </svelte:fragment>
     <!-- Page Route Content -->
     <slot />

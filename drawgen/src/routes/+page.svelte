@@ -1,8 +1,3 @@
-<script>
-    import Header from "../layout/Header.svelte";
-</script>
-
-<Header />
 <div class="grid-container">
     <div class="info-section">
         <p class="span-col">
@@ -34,8 +29,8 @@
         grid-template-columns: 1fr 1fr;
         grid-auto-rows: minmax(100px, auto);
         gap: 5%;
-        padding: 5% 1.5em 1.5em;
-        font: 1em "Chillax", sans-serif;
+        padding: 7% 1.5em 1.5em;
+        font: .8em "Chillax", sans-serif;
     }
     .span-col {
         grid-column: auto / span 2;
@@ -47,17 +42,15 @@
     .info-section {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
         font: 4em sans-serif;
+        height: 40vh;
     }
     .details {
-        font: .3em "Chillax", sans-serif;
+        font: .5em "Chillax", sans-serif;
     }
     .buttons {
         display: flex;
         justify-content: space-evenly;
-    }
-    a:visited {
-        color: teal; /* Keep white color after visit */
     }
 </style>
