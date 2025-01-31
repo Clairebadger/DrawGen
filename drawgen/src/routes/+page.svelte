@@ -3,7 +3,6 @@
 </script>
 
 <Header />
-
 <div class="grid-container">
     <div class="info-section">
         <p class="span-col">

@@ -18,9 +18,16 @@
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.5.27",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
+		"@tailwindcss/typography": "^0.5.14",
+		"@types/node": "^22.10.10",
+		"autoprefixer": "^10.4.20",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
+		"tailwindcss": "^3.4.9",
 		"typescript": "^5.5.0",
 		"vite": "^5.4.11"
+	},
+	"dependencies": {
+		"vite-plugin-tailwind-purgecss": "^0.3.5"
 	}
 }
