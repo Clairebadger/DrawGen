@@ -14,7 +14,7 @@
             </div>
             <div class="flex justify-center space-x-2">
                 <a class="btn variant-outline" href="/library">
-                    Access your library!
+                    What are the rules?
                 </a>
             </div>
         </div>

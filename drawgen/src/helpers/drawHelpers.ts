@@ -32,7 +32,6 @@ let createVfsDraw = (draw: DrawType, numFlyers: number) => {
         if (draw.level.includes("Intermediate")) {pool = vfs2WayIntermediateHS;}
         if (draw.level.includes("Advanced")) {pool = vfs2WayAdvancedHS;}
         if (draw.level.includes("Open")) {pool = vfs2WayOpenHS;}
-        console.log(vfs2WayAdvancedHS)
         return createRoundsVfs2Way(pool ?? [], vfs2WayLS, 9);
     } else {
         if (draw.level.includes("Advanced")) {pool = vfs4WayAdvanced;}
@@ -49,7 +48,7 @@ let createRoundsVfs4Way = (pool: string[], rounds: number) => {
     for (let i = 0; i <rounds; i++) {
         draw.push([]);
         while (getRoundPoints(draw[i]) < maxPoints) {
-            if (pool.length == 0) { poolCopy = JSON.parse(JSON.stringify(pool))}
+            if (poolCopy.length == 0) {poolCopy = JSON.parse(JSON.stringify(pool))}
             let formation = poolCopy[Math.floor(Math.random()*poolCopy.length)];
             poolCopy.splice(poolCopy.indexOf(formation), 1)
             draw[i].push("VFS_4Way_(FAI-ISC)_Indoor-" + formation);

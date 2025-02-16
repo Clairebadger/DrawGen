@@ -26,13 +26,13 @@
 
 
 <div class="grid-container">
-    <form onsubmit={() => handleSubmit()} class="grid-container">
-        <h3 class="span-col">
+    <form onsubmit={() => handleSubmit()} class="form-container">
+        <h1 class="span-col text-2xl">
             Create random draw!
-        </h3>
+        </h1>
 
         <label for="type"> Discipline:</label>
-        <select id="type" bind:value={drawType} onchange={() => readyToSubmit = checkALlValuesEntered(drawType.title, organization, num_flyers, level)} class="select">
+        <select class="select" id="type" bind:value={drawType} onchange={() => readyToSubmit = checkALlValuesEntered(drawType.title, organization, num_flyers, level)} >
             {#each categories as option}
                 <option value={option}>
                     {option.title}
@@ -41,7 +41,7 @@
         </select>
 
         <label for="org">Organization:</label>
-        <select id="org" bind:value={organization} onchange={() => readyToSubmit = checkALlValuesEntered(drawType.title, organization, num_flyers, level)}>
+        <select class="select" id="org" bind:value={organization} onchange={() => readyToSubmit = checkALlValuesEntered(drawType.title, organization, num_flyers, level)}>
             {#each drawType.organizations as option}
                 <option value={option}>
                     {option}
@@ -50,7 +50,7 @@
         </select>
 
         <label for="num">Number of flyers:</label>
-        <select id="num" bind:value={num_flyers} onchange={() => readyToSubmit = checkALlValuesEntered(drawType.title, organization, num_flyers, level)}>
+        <select class="select" id="num" bind:value={num_flyers} onchange={() => readyToSubmit = checkALlValuesEntered(drawType.title, organization, num_flyers, level)}>
             {#each getDetailsFromOrgDiscipline(drawType.title, organization).num_flyers as option}
                 <option value={option}>
                     {option}
@@ -59,7 +59,7 @@
         </select>
 
         <label for="level">Level:</label>
-        <select id="level" bind:value={level} onchange={() => readyToSubmit = checkALlValuesEntered(drawType.title, organization, num_flyers, level)}>
+        <select class="select " id="level" bind:value={level} onchange={() => readyToSubmit = checkALlValuesEntered(drawType.title, organization, num_flyers, level)}>
             {#each getDetailsFromOrgDiscipline(drawType.title, organization).levels as option}
                 <option value={option}>
                     {option}
@@ -67,7 +67,7 @@
             {/each}
         </select>
 
-        <button disabled={!readyToSubmit} type="submit"> Submit </button>
+        <button disabled={!readyToSubmit} type="submit" class="btn variant-filled"> Submit </button>
     </form>
 
     <div class="span-row round-container"  >
@@ -82,10 +82,13 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-auto-rows: minmax(100px, auto);
-        gap: 10px;
         padding: .5em;
-        color: #00AFB9;
-        font: 1.2em "Chillax", sans-serif;
+    }
+    .form-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
+        padding: .5em;
     }
     .span-row {
         grid-row: auto / span 2;
@@ -94,44 +97,51 @@
     .span-col {
         grid-column: auto / span 2;
     }
-    /* Style for all <select> elements */
+
     select {
-        width: 17em; /* Fixed width relative to font size */
-        height: 2.2em; /* Fixed height relative to font size */
-        padding: 0.5em; /* Inner spacing */
-        font-size: .8em; /* Text size */
-        color: #333; /* Text color */
-        background-color: #fff; /* Background color */
-        border: 0.075em solid #ccc; /* Border thickness */
-        border-radius: 0.3em; /* Rounded corners */
-        box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        width: 80%;
+        height: 35%;
         cursor: pointer; /* Pointer/hand icon */
-        appearance: none; /* Remove default styling */
-        transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
     }
 
     /* Add focus effect */
     select:focus {
-        border-color: #00AFB9; /* Green border on focus */
         box-shadow: 0 0 0.3em rgba(0,0,0,0); /* Glow effect */
         outline: none; /* Remove default outline */
     }
 
     /* Style for the label */
     label {
-        font-size: 1em; /* Label font size */
+        font-size: 1.3rem; /* Label font size */
         display: block; /* Force label to appear above select */
-        color: #333; /* Label color */
     }
 
     button {
-        font-size: 1em;
-        width: 50%;
-        height: 50%;
+        font-size: 1.3rem;
+        width: 40%;
+        height: 40%;
     }
 
-    .round-container {
-        padding-top: 5%;
+    @media screen and (max-width: 1200px) {
+        .grid-container {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto; /* Stack containers vertically */
+            font-size: .7em;
+        }
+        .form-container {
+            width: 100%
+        }
+        select {
+            font-size: 1em;
+        }
+        .round-container {
+            width: 100%
+        }
+        button {
+            font-size: 1rem;
+            width: 40%;
+            height: 30%;
+        }
     }
 </style>
 

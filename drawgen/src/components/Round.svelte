@@ -23,7 +23,7 @@
         max-width: 17%; /* Set a maximum width for the images */
         height: auto; /* Maintain original height */
         object-fit: contain; /* Ensure aspect ratio is maintained */
-        border: 2px solid black; /* Add black border around each image */
+        border: 2px solid white; /* Add black border around each image */
         transition: filter 0.3s ease; /* Smooth transition for border color */
     }
 

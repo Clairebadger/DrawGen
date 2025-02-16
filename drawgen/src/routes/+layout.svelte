@@ -9,17 +9,17 @@
         <!-- App Bar -->
         <AppBar padding="p-8">
             <svelte:fragment slot="lead">
-                <strong class="text-xl uppercase">DrawGen</strong>
+                <strong class="text-3xl uppercase">DrawGen</strong>
             </svelte:fragment>
             <svelte:fragment slot="trail">
-                <a class="btn btn-sm variant-ghost-surface" href="/generator">
-                    New Draw
+                <a class="btn btn-md variant-outline-primary" href="/generator">
+                    Random Draw
                 </a>
-                <a class="btn btn-sm variant-ghost-surface" href="/library">
-                    Library
+                <a class="btn btn-md variant-outline-primary" href="/library">
+                    Custom Draw
                 </a>
-                <a class="btn btn-sm variant-ghost-surface" href="/generator">
-                    About
+                <a class="btn btn-md variant-outline-primary" href="/generator">
+                    Competition Rules
                 </a>
             </svelte:fragment>
         </AppBar>
@@ -27,3 +27,9 @@
     <!-- Page Route Content -->
     <slot />
 </AppShell>
+
+<style>
+    @media screen and (max-width: 750px) {
+
+    }
+</style>
