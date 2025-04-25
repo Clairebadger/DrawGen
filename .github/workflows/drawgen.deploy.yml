@@ -32,7 +32,7 @@ jobs:
         run: aws s3 sync drawgen/build/ s3://draw-generator-bucket --delete
 
       - name: Invalidate CloudFront Cache
-        run: aws cloudfront create-invalidation --distribution-id YOUR_CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id EAHUGIVY54NHO --paths "/*"
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
