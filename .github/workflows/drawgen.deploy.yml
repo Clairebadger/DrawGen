@@ -21,6 +21,11 @@ jobs:
         run: npm run build
         working-directory: ./drawgen
 
+      - name: Debug AWS CLI environment
+        run: |
+          echo "Region: $AWS_REGION"
+          echo "Access Key Starts With: ${AWS_ACCESS_KEY_ID:0:4}"
+
       - name: Sync with S3
         run: aws s3 sync drawgen/build/ s3://drawgen --delete
         env:
