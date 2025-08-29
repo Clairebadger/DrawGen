@@ -91,45 +91,15 @@ export const formationDetails: FormationDetails[] = [
     },
     {
         formation_type: "Vertical Formation (VFS)",
-        organization: "FAI-ISC",
-        num_flyers: [4],
-        levels: ["FAI-ISC Open\\USPA Open"]
-    },
-    {
-        formation_type: "Vertical Formation (VFS)",
-        organization: "USPA",
-        num_flyers: [4],
-        levels: ["FAI-ISC Open\\USPA Open", "USPA Advanced", "USPA Intermediate"]
-    },
-    {
-        formation_type: "Vertical Formation (VFS)",
-        organization: "USPA Collegiate",
-        num_flyers: [2],
-        levels: ["USPA Collegiate"]
-    },
-    {
-        formation_type: "Vertical Formation (VFS)",
-        organization: "USIS Indoor",
+        organization: "N/A",
         num_flyers: [2, 4],
-        levels: ["USIS Open", "USIS Advanced", "USIS Intermediate", "USIS Rookie"]
-    },
-    {
-        formation_type: "Vertical Formation (VFS)",
-        organization: "FAI-ISC Indoor",
-        num_flyers: [4],
-        levels: ["FAI-ISC Open\\USPA Open"]
+        levels: ["Open", "Advanced", "Intermediate"]
     },
     {
         formation_type: "Mixed Formation (MFS)",
-        organization: "USPA",
+        organization: "N/A",
         num_flyers: [2],
-        levels: ["USPA Open", "USPA Advanced"]
-    },
-    {
-        formation_type: "Mixed Formation (MFS)",
-        organization: "AXIS",
-        num_flyers: [2],
-        levels: ["AXIS Open", "AXIS Advanced", "AXIS Intermediate"]
+        levels: ["Open", "Advanced", "Intermediate"],
     },
     {
         formation_type: "Horizontal Formation (HFS)",

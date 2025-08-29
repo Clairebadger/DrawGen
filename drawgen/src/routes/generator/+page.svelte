@@ -7,14 +7,14 @@
     let rounds = $state([])
     let readyToSubmit = $state(false);
 
-    let drawType = $state({title: "", organizations: []});
+    let drawType = $state("");
     let organization = $state("");
     let num_flyers = $state("");
     let level = $state("");
 
     let handleSubmit = () => {
         const draw = {
-            type: drawType.title,
+            type: drawType,
             organization: organization,
             numFlyers: num_flyers,
             level: level
@@ -32,26 +32,28 @@
         </h1>
 
         <label for="type"> Discipline:</label>
-        <select class="select" id="type" bind:value={drawType} onchange={() => readyToSubmit = checkALlValuesEntered(drawType.title, organization, num_flyers, level)} >
+        <select class="select" id="type" bind:value={drawType} onchange={() => readyToSubmit = checkALlValuesEntered(drawType, organization, num_flyers, level)} >
             {#each categories as option}
-                <option value={option}>
+                <option value={option.title}>
                     {option.title}
                 </option>
             {/each}
         </select>
 
-        <label for="org">Organization:</label>
-        <select class="select" id="org" bind:value={organization} onchange={() => readyToSubmit = checkALlValuesEntered(drawType.title, organization, num_flyers, level)}>
-            {#each drawType.organizations as option}
-                <option value={option}>
-                    {option}
-                </option>
-            {/each}
-        </select>
+        {#if drawType === "Formation (FS)"}
+            <label for="org">Organization:</label>
+            <select class="select" id="org" bind:value={organization} onchange={() => readyToSubmit = checkALlValuesEntered(drawType, organization, num_flyers, level)}>
+                {#each drawType.organizations as option}
+                    <option value={option}>
+                        {option}
+                    </option>
+                {/each}
+            </select>
+        {/if}
 
         <label for="num">Number of flyers:</label>
-        <select class="select" id="num" bind:value={num_flyers} onchange={() => readyToSubmit = checkALlValuesEntered(drawType.title, organization, num_flyers, level)}>
-            {#each getDetailsFromOrgDiscipline(drawType.title, organization).num_flyers as option}
+        <select class="select" id="num" bind:value={num_flyers} onchange={() => readyToSubmit = checkALlValuesEntered(drawType, organization, num_flyers, level)}>
+            {#each getDetailsFromOrgDiscipline(drawType, organization).num_flyers as option}
                 <option value={option}>
                     {option}
                 </option>
@@ -59,8 +61,8 @@
         </select>
 
         <label for="level">Level:</label>
-        <select class="select " id="level" bind:value={level} onchange={() => readyToSubmit = checkALlValuesEntered(drawType.title, organization, num_flyers, level)}>
-            {#each getDetailsFromOrgDiscipline(drawType.title, organization).levels as option}
+        <select class="select " id="level" bind:value={level} onchange={() => readyToSubmit = checkALlValuesEntered(drawType, organization, num_flyers, level)}>
+            {#each getDetailsFromOrgDiscipline(drawType, organization).levels as option}
                 <option value={option}>
                     {option}
                 </option>

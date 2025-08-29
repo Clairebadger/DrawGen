@@ -15,10 +15,7 @@
                 <a class="btn btn-md variant-outline-primary" href="/generator">
                     Random Draw
                 </a>
-                <a class="btn btn-md variant-outline-primary" href="/library">
-                    Custom Draw
-                </a>
-                <a class="btn btn-md variant-outline-primary" href="/generator">
+                <a class="btn btn-md variant-outline-primary" href="/rules">
                     Competition Rules
                 </a>
             </svelte:fragment>
