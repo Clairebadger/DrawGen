@@ -14,6 +14,6 @@
     </div>
 
     <div class="img-container">
-        <img src="/src/lib/images/image3.jpg" alt="Formation skydiving">
+        <img src="images/image3.jpg" alt="Formation skydiving">
     </div>
 </div>
