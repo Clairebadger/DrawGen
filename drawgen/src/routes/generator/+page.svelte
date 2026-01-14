@@ -25,7 +25,7 @@
 </script>
 
 
-<div class="grid-container">
+<div class="generator-grid">
     <form onsubmit={() => handleSubmit()} class="form-container">
         <h1 class="span-col text-2xl">
             Create random draw!
@@ -69,16 +69,12 @@
             {/each}
         </select>
 
-        <button disabled={!readyToSubmit} type="submit" class="btn variant-filled"> Submit </button>
+        <button disabled={!readyToSubmit} type="submit" class="btn-primary"> Submit </button>
     </form>
 
-    <div class="span-row round-container"  >
+    <div class="round-container">
         <Draw rounds = {rounds} />
     </div>
 </div>
 
-<style>
-    @import '../../css/Shared.css';
-    @import '../../css/Generator.css';
-</style>
 

@@ -15,7 +15,10 @@ const config = {
         adapter: adapter({
             fallback: 'index.html', // optional for SPA routing
         }),
-        prerender: { entries: ['*'] }
+        prerender: { entries: ['*'] },
+        alias: {
+            $lib: 'src/lib'
+        }
     }
 };
 export default config;

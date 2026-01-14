@@ -10,6 +10,5 @@ const vfs4WayAdvanced: string[] = ["A", "B", "C", "E", "J", "K", "L", "1", "2", 
 
 const vfs4WayOpen: string[] = ["D", "F", "G", "H", "M", "N", "O", "P", "Q", "5", "6", "10", "15", "17", "18", "19", "20"]
 
-const getvfs2WayAdvancedHS = () => vfs2WayAdvancedHS
 
 export {vfs2WayAdvancedHS, vfs2WayIntermediateHS, vfs2WayOpenHS, vfs2WayLS, vfs4WayAdvanced, vfs4WayOpen}

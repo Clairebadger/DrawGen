@@ -1,0 +1,71 @@
+@layer components {
+  /* Page container - centers content, fills viewport */
+  .page-container {
+    @apply min-h-[calc(100vh-5rem)] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Form select/dropdown styling */
+  .select {
+    @apply w-full px-3 py-2 rounded-md border border-border bg-input text-foreground cursor-pointer;
+    @apply focus:outline-none focus:ring-2 focus:ring-ring;
+  }
+
+  .select option {
+    @apply bg-background text-foreground;
+  }
+
+  /* Form label styling */
+  .form-label {
+    @apply text-lg font-medium text-foreground mb-1;
+  }
+
+  /* Generator page layout */
+  .generator-grid {
+    @apply w-full min-h-[calc(100vh-6rem)] grid grid-cols-1 lg:grid-cols-2 gap-16 p-4 md:p-8;
+  }
+
+  .form-container {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-16 items-center content-start;
+  }
+
+  .form-container label {
+    @apply text-lg font-medium;
+  }
+
+  .span-col {
+    @apply col-span-1 sm:col-span-2;
+  }
+
+  .round-container {
+    @apply w-full;
+  }
+
+  /* Section with max width and centered text */
+  .section-header {
+    @apply text-center w-full max-w-4xl mb-8;
+  }
+
+  /* Primary button style */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md border border-primary bg-primary text-primary-foreground px-8 py-3 text-lg font-medium hover:bg-primary/90 transition-colors w-full sm:w-auto sm:min-w-[250px];
+  }
+
+  /* Secondary button style */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md border border-border bg-secondary text-secondary-foreground px-8 py-3 text-lg font-medium hover:bg-secondary/80 transition-colors w-full sm:w-auto sm:min-w-[250px];
+  }
+
+  /* Button group - stacks on mobile, row on desktop */
+  .btn-group {
+    @apply flex flex-col sm:flex-row gap-4 justify-center;
+  }
+
+  /* Responsive image container */
+  .img-container {
+    @apply w-full max-w-3xl px-4;
+  }
+
+  .img-container img {
+    @apply w-full h-auto rounded-lg shadow-lg;
+  }
+}

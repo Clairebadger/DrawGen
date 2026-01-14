@@ -1,22 +1,65 @@
+/* Import component styles */
+@import './styles/components.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@tailwind variants;
 
-html,
-body {
-	@apply h-full overflow-hidden;
+@layer base {
+  :root {
+    /* Dark navy color scheme */
+    --background: 220 40% 13%;
+    --foreground: 210 40% 96%;
+    --card: 220 35% 18%;
+    --card-foreground: 210 40% 96%;
+    --popover: 220 35% 18%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 43 96% 56%;
+    --primary-foreground: 220 40% 13%;
+    --secondary: 220 30% 25%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 220 30% 20%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 185 60% 45%;
+    --accent-foreground: 220 40% 10%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 25% 28%;
+    --input: 220 30% 22%;
+    --ring: 43 96% 56%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark navy color scheme (same as light for consistent dark theme) */
+    --background: 220 40% 13%;
+    --foreground: 210 40% 96%;
+    --card: 220 35% 18%;
+    --card-foreground: 210 40% 96%;
+    --popover: 220 35% 18%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 43 96% 56%;
+    --primary-foreground: 220 40% 13%;
+    --secondary: 220 30% 25%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 220 30% 20%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 185 60% 45%;
+    --accent-foreground: 220 40% 10%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 25% 28%;
+    --input: 220 30% 22%;
+    --ring: 43 96% 56%;
+  }
 }
 
-/* rocket theme */
-@font-face {
-	font-family: 'Space Grotesk';
-	src: url('/fonts/SpaceGrotesk.ttf');
-	font-display: swap;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
-/* gold-nouveau theme */
-@font-face {
-	font-family: 'Quicksand';
-	src: url('/fonts/Quicksand.ttf');
-	font-display: swap;
-}
+
