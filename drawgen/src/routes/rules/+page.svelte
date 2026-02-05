@@ -1,8 +1,7 @@
-<script>
+<script lang="ts">
+    import { formationSkydiving } from '../../constants/competitionRules';
 
-    import { formationSkydiving } from '../../constants/competitionRules.ts';
-
-    let value = $state(['FS']);
+    let value = $state<string[]>(['FS']);
 </script>
 
 <div class="container">

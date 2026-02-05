@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
     import Round from "./Round.svelte";
-    let { rounds } = $props();
+    import type { Draw } from '../constants/VFSContstants';
 
+    let { rounds }: { rounds: Draw } = $props();
 </script>
 
 <div class="container">
@@ -9,7 +10,6 @@
         <h1 class="text-lg">Round {index + 1}</h1>
         <Round formations = {round}/>
     {/each}
-    <i class="fa-solid fa-pen-to-square">Edit</i>
 </div>
 
 <style lang="postcss">

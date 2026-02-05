@@ -3,7 +3,7 @@
     justify-content: center;
 }
 
-.image-container img {
+.image-container a {
     margin: 5px; /* Add some space between images */
     max-width: 17%; /* Set a maximum width for the images */
     height: auto; /* Maintain original height */
@@ -16,19 +16,3 @@
     filter: brightness(70%); /* Remove grayscale on hover */
 }
 
-.icons {
-    display: none; /* Hide icons by default */
-}
-
-.image-wrapper:hover .icons {
-    display: flex; /* Show icons on hover */
-    gap: 5px; /* Space between icons */
-}
-
-.icon-button {
-    background-color: #000;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    padding: 5px;
-    cursor: pointer;
-}

@@ -1,6 +1,11 @@
-<script>
-    let selected = $state()
-    let options
+<script lang="ts">
+    type Option = {
+        value: string;
+        text: string;
+    };
+
+    let selected = $state<Option | undefined>();
+    let { options }: { options: Option[] } = $props();
 </script>
 
 <select bind:value={selected}>
